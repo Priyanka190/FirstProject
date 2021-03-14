@@ -1,19 +1,22 @@
 package com.priyanka;
-
-import com.priyanka.implementation.Substaff;
-
 import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
-        double basicSalary;
         Scanner sc = new Scanner(System.in);
-        basicSalary = sc.nextDouble();
-        Substaff s = new Substaff(basicSalary);
-        s.earning();
-        s.deduction();
-        s.bonus();
-        System.out.println(s);
+        try {
+             int a[] = new int[5];
+             for(int i=0; i< a.length; i++) {
+                 a[i] = sc.nextInt();
+             }
+            System.out.println(a[6]);
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBound");
+        }
+        finally {
+             System.out.println("finally block");
+        }
+        System.out.println("main code");
     }
 }
