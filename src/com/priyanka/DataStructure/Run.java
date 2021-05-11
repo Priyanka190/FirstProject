@@ -18,25 +18,19 @@ public class Run {
         System.out.println("enter the desired operation number:");
         operation=sc.nextInt();
         switch(operation) {
-            case 1:System.out.println("insert at the starting:\n");
-                System.out.println("enter data:\n");
-                int data=sc.nextInt();
-                list.insertAtStart(data);
+            case 1:System.out.println("delete at the starting:\n");
+                list.deleteAtStart();
                 System.out.println(list);
                 break;
-            case 2:System.out.println("insert at given position:\n");
+            case 2:System.out.println("delete at given position:\n");
                 System.out.println("enter the position:\n");
                 int pos;
                 pos=sc.nextInt();
-                System.out.println("enter data:\n");
-                data=sc.nextInt();
-                list.insertAtMiddle(data,pos);
+                list.deleteAtMiddle(pos);
                 System.out.println(list);
                 break;
-            case 3:System.out.println("insert at the end of list:\n" );
-                System.out.println("enter data:\n");
-                data=sc.nextInt();
-                list.insertAtEnd(data);
+            case 3:System.out.println("delete at the end of list:\n" );
+                list.deleteAtEnd();
                 System.out.println(list);
         }
     }

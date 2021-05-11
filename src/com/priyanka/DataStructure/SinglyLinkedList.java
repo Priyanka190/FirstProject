@@ -22,42 +22,43 @@ class SinglyLinkedList {
         }
     }
 
-    public void insertAtStart(int data) {
+    public void deleteAtStart() {
         if (head == null) {
-            head = new Node(data);
+            System.out.println("nothing would be done:\n");
         } else {
-            Node temp=new Node(data);
-            temp.next=head;
-            head=temp;
+            head=head.next;
         }
 
     }
-    public void insertAtMiddle(int data, int pos){
+    public void deleteAtMiddle(int pos){
         if(head==null) {
             System.out.println("no operation is done:\n");
         }
         else {
             Node n=head;
+            Node n1=head;
             int i=0;
             while(i<pos-1 && n!=null) {
+                n=n1;
                 n=n.next;
                 i++;
             }
-            Node temp=new Node(data);
-            temp.next=n.next;
-            n.next=temp;
+            n1.next=n.next;
+            n.next=null;
         }
     }
-    public void insertAtEnd(int data) {
+    public void deleteAtEnd() {
         if(head==null) {
             System.out.println("no operation is done:\n");
         }
         else {
             Node n=head;
+            Node n1=n;
             while(n.next!=null) {
+                n1=n;
                 n=n.next;
             }
-            n.next=new Node(data);
+            n1.next=null;
         }
     }
 
