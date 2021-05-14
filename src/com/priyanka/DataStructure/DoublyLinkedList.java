@@ -22,17 +22,17 @@ public class DoublyLinkedList {
             n.next=temp;
         }
     }
-    public void insertAtStart(int data) {
+    public void deleteAtStart() {
         if(head==null) {
-            head=new Node(data);
+            System.out.println("nothing has to be done");
         }
         else {
-            Node temp=new Node(data);
-            temp.next=head;
-            head=temp;
+            Node temp=head;
+            head=head.next;
+            temp=null;
         }
     }
-    public void insertAtMid(int data,int pos) {
+    public void deleteAtMid(int pos) {
         if(head==null) {
             System.out.println("nothing to be performed");
         }
@@ -43,16 +43,12 @@ public class DoublyLinkedList {
                 n=n.next;
                 i++;
             }
-            Node temp=new Node(data);
-            temp.next=n.next;
-            temp.prev=n;
-            if(n.next!=null) {
-                n.next.prev=temp;
-                n.next=temp;
-            }
+           Node temp=n;
+            temp.next.prev=temp.prev;
+            temp.prev.next=temp.next;
         }
     }
-    public void insertAtEnd(int data) {
+    public void deleteAtEnd() {
         if(head==null) {
             System.out.println("nothing can be done");
         }
@@ -61,10 +57,7 @@ public class DoublyLinkedList {
             while(n.next!=null) {
                 n=n.next;
             }
-            Node temp=new Node(data);
-            temp.next=null;
-            temp.prev=n;
-            n.next=temp;
+         n.prev.next=null;
         }
     }
     public String toString() {

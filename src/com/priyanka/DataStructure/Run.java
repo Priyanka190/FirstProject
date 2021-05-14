@@ -14,30 +14,36 @@ public class Run {
             list.add(data);
         }
         System.out.println(list);
-        int operation;
-        System.out.println("enter the desired operation number:");
-        operation=sc.nextInt();
-        switch(operation) {
-            case 1:System.out.println("insert at the starting:\n");
-                System.out.println("enter data:\n");
-                int data=sc.nextInt();
-                list.insertAtStart(data);
-                System.out.println(list);
-                break;
-            case 2:System.out.println("insert at given position:\n");
-                System.out.println("enter the position:\n");
-                int pos;
-                pos=sc.nextInt();
-                System.out.println("enter data:\n");
-                data=sc.nextInt();
-                list.insertAtMid(data,pos);
-                System.out.println(list);
-                break;
-            case 3:System.out.println("insert at the end of list:\n" );
-                System.out.println("enter data:\n");
-                data=sc.nextInt();
-                list.insertAtEnd(data);
-                System.out.println(list);
+        System.out.println("enter 1 to be continued and 0 to be stop");
+        int stop;
+        stop=sc.nextInt();
+        while(stop==1) {
+            int operation;
+            System.out.println("enter the desired operation number:");
+            operation=sc.nextInt();
+            switch (operation) {
+                case 1:
+                    System.out.println("deletion at the starting:");
+                    list.deleteAtStart();
+                    System.out.println(list);
+                    break;
+                case 2:
+                    System.out.println("deletion at given position:");
+                    System.out.println("enter the position:");
+                    int pos;
+                    pos = sc.nextInt();
+                    list.deleteAtMid(pos);
+                    System.out.println(list);
+                    break;
+                case 3:
+                    System.out.println("deletion at the end of list:");
+                    list.deleteAtEnd();
+                    System.out.println(list);
+                default:
+                    System.out.println("Invaild input");
+            }
+            System.out.println("press 1 to continue:");
+            stop = sc.nextInt();
         }
     }
 }
