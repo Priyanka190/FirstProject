@@ -13,11 +13,12 @@ public class Run {
         int n = sc.nextInt();
         for(int i=0; i<n; i++) {
             int data = sc.nextInt();
-            list.add(data);
+            int index = sc.nextInt();
+            list.add(data,index);
         }
         System.out.println(list);
-        System.out.println("EnTER THE ELEMENT YOU WANT TO SEARCH:");
-        int data=sc.nextInt();
-        list.searchElement(data);
+        System.out.println("EnTER THE Nth term:");
+        int index=sc.nextInt();
+        list.nthElement(index);
     }
 }

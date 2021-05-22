@@ -9,31 +9,30 @@ class SinglyLinkedList {
         this.head = null;
     }
 
-    public void add(int data) {
+    public void add(int data,int index) {
         if (head == null) {
-            head = new Node(data);
+            head = new Node(data,index);
         } else {
             Node n = head;
             while (n.next != null) {
                 n = n.next;
             }
-            n.next = new Node(data);
+            n.next = new Node(data,index);
 
         }
     }
 
-    public void searchElement(int data) {
-        Node ptr=head;
-        while(ptr!=null) {
-            if(ptr.data==data) {
-                System.out.println("found the data:\t"+ptr.data);
+    public void nthElement(int index) {
+        Node ptr = head;
+        int count = 0;
+        while (ptr != null) {
+            if (count == index) {
+                System.out.println("required element:" + ptr.data);
                 break;
             }
-            else {
-                ptr=ptr.next;
-            }
+            count++;
+            ptr = ptr.next;
         }
-        System.out.println("data does not exist");
     }
 
     public String toString() {
