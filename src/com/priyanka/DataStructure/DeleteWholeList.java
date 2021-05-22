@@ -22,19 +22,12 @@ class SinglyLinkedList {
         }
     }
 
-    public void printMiddle()
-    {
-        Node ptr = head;
-        Node ptr1 = head;
-        if (head != null)
-        {
-            while (ptr != null && ptr.next != null)
-            {
-                ptr = ptr.next.next;
-                ptr1 = ptr1.next;
-            }
-            System.out.println("The middle element is [" +
-                    ptr1.data + "] \n");
+    public void deletewholeList() {
+        Node temp=head;
+        Node ptr=head;
+        while(ptr!=null){
+            ptr=ptr.next;
+            head=head.next;
         }
     }
 

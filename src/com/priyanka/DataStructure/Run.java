@@ -15,7 +15,7 @@ public class Run {
             int data = sc.nextInt();
             list.add(data);
         }
-        list.printMiddle();
+        list.deletewholeList();
         System.out.println(list);
     }
 }
