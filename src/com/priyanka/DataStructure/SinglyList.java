@@ -22,14 +22,15 @@ class SinglyLinkedList {
         }
     }
 
-    public void deletewholeList() {
-        Node temp=head;
+   public void findLength() {
         Node ptr=head;
-        while(ptr!=null){
+        int count=0;
+        while(ptr!=null) {
             ptr=ptr.next;
-            head=head.next;
+            count++;
         }
-    }
+        System.out.println("length of list: "+count);
+   }
 
     public String toString() {
         return "" + head;

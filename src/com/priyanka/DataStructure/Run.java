@@ -15,7 +15,7 @@ public class Run {
             int data = sc.nextInt();
             list.add(data);
         }
-        list.deletewholeList();
         System.out.println(list);
+        list.findLength();
     }
 }
