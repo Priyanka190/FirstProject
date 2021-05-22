@@ -13,8 +13,9 @@ public class Run {
         int n = sc.nextInt();
         for(int i=0; i<n; i++) {
             int data = sc.nextInt();
-            list.insertionSort(data);
+            list.add(data);
         }
+        list.printMiddle();
         System.out.println(list);
     }
 }
