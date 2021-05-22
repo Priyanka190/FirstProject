@@ -3,17 +3,18 @@ package com.priyanka.DataStructure;
 import java.util.Scanner;
 import java.lang.Exception;
 
+import java.util.Scanner;
+
 public class Run {
-    public static void main(String[] ars) throws Exception {
+    public static void main(String[] agrs) {
         Scanner sc = new Scanner(System.in);
-        SinglyCircularList list = new SinglyCircularList();
-        System.out.println("enter the num of node:");
+        SinglyLinkedList list = new SinglyLinkedList();
+        System.out.println("enter the num of node:\n");
         int n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
+        for(int i=0; i<n; i++) {
             int data = sc.nextInt();
-            list.add(data);
+            list.insertionSort(data);
         }
         System.out.println(list);
     }
 }
-
