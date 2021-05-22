@@ -22,15 +22,19 @@ class SinglyLinkedList {
         }
     }
 
-   public void findLength() {
+    public void searchElement(int data) {
         Node ptr=head;
-        int count=0;
         while(ptr!=null) {
-            ptr=ptr.next;
-            count++;
+            if(ptr.data==data) {
+                System.out.println("found the data:\t"+ptr.data);
+                break;
+            }
+            else {
+                ptr=ptr.next;
+            }
         }
-        System.out.println("length of list: "+count);
-   }
+        System.out.println("data does not exist");
+    }
 
     public String toString() {
         return "" + head;

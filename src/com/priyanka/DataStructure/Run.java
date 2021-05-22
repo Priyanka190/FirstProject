@@ -16,6 +16,8 @@ public class Run {
             list.add(data);
         }
         System.out.println(list);
-        list.findLength();
+        System.out.println("EnTER THE ELEMENT YOU WANT TO SEARCH:");
+        int data=sc.nextInt();
+        list.searchElement(data);
     }
 }
