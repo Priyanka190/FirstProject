@@ -9,29 +9,16 @@ class SinglyLinkedList {
         this.head = null;
     }
 
-    public void add(int data,int index) {
+    public void add(int data) {
         if (head == null) {
-            head = new Node(data,index);
+            head = new Node(data);
         } else {
             Node n = head;
             while (n.next != null) {
                 n = n.next;
             }
-            n.next = new Node(data,index);
+            n.next = new Node(data);
 
-        }
-    }
-
-    public void nthElement(int index) {
-        Node ptr = head;
-        int count = 0;
-        while (ptr != null) {
-            if (count == index) {
-                System.out.println("required element:" + ptr.data);
-                break;
-            }
-            count++;
-            ptr = ptr.next;
         }
     }
 
