@@ -1,8 +1,5 @@
-enter the num of node in first list:
-enter 1st List :
- [9] ->  [9] ->  [9] ->  [9] -> null
-Enter the num of node in second list:
-enter 2st List :
- [9] ->  [9] ->  [9] ->  [9] ->  [9] ->  [9] ->  [9] -> null
-3rd list
- [8] ->  [9] ->  [9] ->  [9] ->  [0] ->  [0] ->  [0] ->  [1] -> null
+1 3 
+2 
+
+1 2 3 
+2
