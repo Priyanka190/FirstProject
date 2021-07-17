@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 public class Run {
     public static void main(String[] agrs) throws FileNotFoundException,Exception {
-//        System.setIn(new FileInputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\input.txt"));
+        System.setIn(new FileInputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\input.txt"));
         System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\output.txt")));
-        SubString r = new SubString();
+        SubString s = new SubString();
         Scanner sc = new Scanner(System.in);
-        String str = new String("aaaaabbbbbcdefaa");
-        r.fun1(str);
+        String str = sc.next();
+        s.longestPalindrome(str);
     }
 }
