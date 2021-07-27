@@ -2,20 +2,20 @@ package com.priyanka.DataStructure;
 class Stack {
     int top;
     int capacity;
-    int[] data;
+    Node[] data;
     public Stack(int capacity) {
         this.capacity=capacity;
         this.top=-1;
-        data=new int[capacity];
+        data=new Node[capacity];
         for(int i=0; i<capacity; i++) {
-            data[i]=-1;
+            data[i]=null;
         }
     }
-    public int pop() {
-        int val;
+    public Node pop() {
+        Node val;
         if(top==-1) {
             System.out.println("STACK IS OVERFLOW ");
-            return -1;
+            return null;
         }
         else {
             val=data[top];
@@ -23,19 +23,19 @@ class Stack {
             return  val;
         }
     }
-    public void push(int val) {
+    public void push(Node node) {
         if(top==capacity) {
             System.out.println("STACK IS OVERFLOW");
         }
         else {
             top++;
-            data[top]=val;
+            data[top]= node;
         }
     }
-    public int peek() {
+    public Node peek() {
         if(top==-1) {
             System.out.println("underflow data");
-            return -1;
+            return null;
         }
         return data[top];
     }

@@ -16,9 +16,10 @@ class Run {
         Stack st = new Stack(size);
         for(int i=0; i<size; i++) {
            int val = sc.nextInt();
-            st.push(val);
+            Node node = new Node(val);
+            st.push(node);
         }
-        int currentTop=st.peek();
+        Node currentTop=st.peek();
         System.out.println("currentTop -> "+currentTop);
         st.display();
     }
