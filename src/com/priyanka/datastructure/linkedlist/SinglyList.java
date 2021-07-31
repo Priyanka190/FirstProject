@@ -1,23 +1,21 @@
-package com.priyanka.DataStructure;
+package com.priyanka.datastructure.linkedlist;
 
-import java.util.Scanner;
+public class SinglyList {
+    public Node head;
 
-class SinglyLinkedList {
-    Node head;
-
-    public SinglyLinkedList() {
+    public SinglyList() {
         this.head = null;
     }
 
-    public void add(int data) {
+    public void add(int data,int deg) {
         if (head == null) {
-            head = new Node(data);
+            head = new Node(data,deg);
         } else {
             Node n = head;
             while (n.next != null) {
                 n = n.next;
             }
-            n.next = new Node(data);
+            n.next = new Node(data,deg);
 
         }
     }
