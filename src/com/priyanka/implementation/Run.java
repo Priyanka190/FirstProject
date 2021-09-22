@@ -3,7 +3,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Run {
@@ -11,11 +12,17 @@ public class Run {
         System.setIn(new FileInputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\input.txt"));
         System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\output.txt")));
         Scanner sc = new Scanner(System.in);
-        String s = sc.next();
-        long n = sc.nextLong();
-        repeat r = new repeat();
-        long k =r.repetion(s,n);
-        System.out.println(k);
+        int size = sc.nextInt();
+        int price = sc.nextInt();
+        List<Integer> a = new ArrayList<>(size);
+        for(int i=0; i<size; i++) {
+            int k= sc.nextInt();
+            a.add(k);
+        }
+        Sorting s = new Sorting();
+        s.bubbleSort(a,price);
+//        s.selectionSort(arr);
+;
     }
 
 }
