@@ -1,9 +1,10 @@
 package com.priyanka.implementation;
-import com.priyanka.implementation.LongestCommonPrefix;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Run {
@@ -12,13 +13,14 @@ public class Run {
         System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\output.txt")));
         Scanner sc = new Scanner(System.in);
         int size  = sc.nextInt();
-        String[] str = new String[size];
+        int[] input = new int[size];
         for(int i=0; i<size; i++) {
-            str[i] = sc.next();
+            input[i] = sc.nextInt();
         }
-        LongestCommonPrefix l  = new LongestCommonPrefix();
-        String pre=l.prefix(str);
-        System.out.println(pre);
+        ThreeSum l  = new ThreeSum();
+        List<Integer> result = new ArrayList<>(size);
+        result=l.threeSum(input);
+        System.out.println(result);
     }
 
 }
