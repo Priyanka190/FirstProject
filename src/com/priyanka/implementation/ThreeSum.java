@@ -5,29 +5,27 @@ import java.util.*;
 
 public class ThreeSum {
 
-    public ArrayList threeSum(int[] input) {
+    public int threeSum(int[] input,int target) {
         int sum,i,j,k;
-        if(input.length<3) return new ArrayList();
         int size = input.length;
-        Arrays.sort(input);
-        List<List<Integer>> array = new ArrayList<>(size);
-        Set<List<Integer>> set =new HashSet();
-        for(i=0; i<size-2; i++) {
-            j=i+1;
-            k=size-1;
-            while(j<k) {
-                sum=input[i]+input[j]+input[k];
-                if(sum==0) {
-                    set.add(Arrays.asList(input[i],input[j++],input[k--]));
-                }
-                else if (sum > 0) {
-                    k--;
-                } else {
-                    j++;
-                }
-            }
+        int minDistance=Integer.MAX_VALUE;
+        int resultedSum=0;
+        for(i=0; i<=size-3; i++) {
+           for(j=i+1; j<=size-2; j++) {
+               for(k=j+1;k<=size-1;k++) {
+                   sum=input[i]+input[j]+input[k];
+                   int distanceFromTarget = sum-target;
+                   if(distanceFromTarget<0) {
+                       distanceFromTarget=-distanceFromTarget;
+                   }
+                   if(distanceFromTarget<minDistance) {
+                       resultedSum=sum;
+                       minDistance=distanceFromTarget;
+                   }
+               }
+           }
         }
-        return new ArrayList(set);
+      return resultedSum;
     }
 
 }

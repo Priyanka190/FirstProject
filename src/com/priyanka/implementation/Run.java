@@ -18,8 +18,8 @@ public class Run {
             input[i] = sc.nextInt();
         }
         ThreeSum l  = new ThreeSum();
-        List<Integer> result = new ArrayList<>(size);
-        result=l.threeSum(input);
+        int target = sc.nextInt();
+        int result=l.threeSum(input,target);
         System.out.println(result);
     }
 
