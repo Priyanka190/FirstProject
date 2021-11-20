@@ -3,8 +3,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Run {
@@ -17,10 +15,13 @@ public class Run {
         for(int i=0; i<size; i++) {
             input[i] = sc.nextInt();
         }
-        ThreeSum l  = new ThreeSum();
+        twoSum l  = new twoSum();
         int target = sc.nextInt();
-        int result=l.threeSum(input,target);
-        System.out.println(result);
+        int[] result = new int[2];
+        result=l.twoSum(input,target);
+        for(int i=0; i<result.length; i++) {
+            System.out.println(result[i]);
+        }
     }
 
 }
