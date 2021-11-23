@@ -3,6 +3,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Run {
@@ -10,18 +12,39 @@ public class Run {
         System.setIn(new FileInputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\input.txt"));
         System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\output.txt")));
         Scanner sc = new Scanner(System.in);
-        int size  = sc.nextInt();
-        int[] input = new int[size];
-        for(int i=0; i<size; i++) {
-            input[i] = sc.nextInt();
+        int size1=sc.nextInt();
+        int size2=sc.nextInt();
+        List<Integer> list1 = new LinkedList<Integer>();
+        List<Integer> list2 = new LinkedList<Integer>();
+        for(int i=0; i<size1; i++) {
+            int temp=sc.nextInt();
+            list1.add(temp);
+        }
+        for(int j=0; j<size2; j++) {
+            int temp1=sc.nextInt();
+            list2.add(temp1);
+        }
+        int diff=size1-size2;
+        if(diff<0) {
+            diff=-diff;
+        }
+        if(diff!=0) {
+            if(size1>size2) {
+                for(int k=0; k<diff; k++) {
+                    int element=0;
+                    list2.add(element);
+                }
+            }
+            else{
+                for(int p=0; p<diff; p++) {
+                    int element=0;
+                    list1.add(element);
+                }
+            }
         }
         twoSum l  = new twoSum();
-        int target = sc.nextInt();
-        int[] result = new int[2];
-        result=l.twoSum(input,target);
-        for(int i=0; i<result.length; i++) {
-            System.out.println(result[i]);
-        }
+        List<Integer> result =new LinkedList<>();
+        result=l.twoSum1(list1,list2);
     }
 
 }

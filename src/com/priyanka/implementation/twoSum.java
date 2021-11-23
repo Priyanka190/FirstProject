@@ -1,32 +1,36 @@
 package com.priyanka.implementation;
 
 import java.lang.reflect.Array;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class twoSum {
 
-    public int[] twoSum(int[] input,int target) {
-        int sum,i,j;
-        List<Integer> list=new LinkedList<Integer>();
-        int size = input.length;
-        int resultedSum=0;
-        for(i=0; i<=size-2; i++) {
-            j=i+1;
-            while(j<=size-1) {
-                sum=input[i]+input[j];
-                if(sum==target) {
-                    resultedSum=sum;
-                    list.add(i);
-                    list.add(j);
-                }
-                j++;
+    public List<Integer> twoSum1(List list1,List list2) {
+        List<Integer> finslList = new LinkedList<>();
+        int sum=0,qouteint=0,rem=0;
+        int temp1=0,temp2 = 0;
+        for(int i=0; i<list1.size(); i++) {
+            temp1= (int) list1.get(i);
+            temp2= (int) list2.get(i);
+            sum=temp1+temp2+qouteint;
+            if(sum<=9) {
+                qouteint=0;
+                finslList.add(sum);
+            }
+            else {
+                qouteint=0;
+                rem=sum%10;
+                qouteint=sum/10;
+                finslList.add(rem);
             }
         }
-        int[] arr = new int[list.size()];
-        for (int k = 0; k < list.size(); k++) {
-            arr[k] = list.get(k);
+        if(qouteint!=0) {
+            finslList.add(qouteint);
         }
-        return arr;
+        System.out.println(finslList);
+        return finslList;
     }
+
 
 }
