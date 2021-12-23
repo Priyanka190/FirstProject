@@ -13,15 +13,14 @@ public class Run {
         System.setIn(new FileInputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\input.txt"));
         System.setOut(new PrintStream(new FileOutputStream("C:\\Users\\KIIT\\IdeaProjects\\FirstProject\\src\\interaction\\output.txt")));
         Scanner sc = new Scanner(System.in);
-        int size=sc.nextInt();
-        int target=sc.nextInt();
-        int[] a= new int[size];
-        for(int i=0; i<size; i++) {
-            a[i]=sc.nextInt();
-        }
         fourSum f=new fourSum();
-        List<List<Integer>> result =f.fourSum(a,target);
-        System.out.println(result);
+        int size=sc.nextInt();
+        int[] marble = new int[size];
+        for(int i=0; i<size; i++) {
+            marble[i]=sc.nextInt();
+        }
+        int output=f.hrcq(size,marble);
+        System.out.println(output);
     }
 
 }
